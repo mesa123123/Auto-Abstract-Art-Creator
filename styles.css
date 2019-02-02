@@ -1,0 +1,40 @@
+body {
+  background-color: #e76e0b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#theCanvas {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-height: 600px;
+  max-width: 1200px;
+}
+#drawButton {
+  background-color: #c4895a;
+  border: 5px solid green;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 2%;
+  min-height: 10vh;
+}
+#cleanerButton {
+  background-color: #c4895a;
+  border: 5px solid green;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 2%;
+  min-height: 10vh;
+}
+#exportButton {
+  background-color: #c4895a;
+  border: 5px solid green;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 2%;
+  min-height: 10vh;
+}
+#buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

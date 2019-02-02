@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auto-Abstract</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <base href="https://autollock.firebaseapp.com/" />
+  </head>
+  <body>
+    <canvas
+      id="theCanvas"
+      width="900"
+      height="600"
+      style="background-color:beige; display: block; border: 5px solid black"
+    ></canvas>
+    <div id="buttonContainer">
+      <button id="drawButton">Draw Some Art</button>
+      <button id="cleanerButton">Clean Canvas</button>
+      <button id="exportButton">Save It</button>
+    </div>
+    <script
+      src="https://autollock.firebaseapp.com/randomColor.js"
+      type="module"
+    ></script>
+    <script type="module">
+      import { thousandSquares } from './drawArt.js';
+      import { colorList } from './colorList.js';
+      import { randomColor } from './randomColor.js';
+      var theCanvas = document.querySelector('canvas'),
+        ctx = theCanvas.getContext('2d');
+      var theButton = document.getElementById('drawButton');
+      theButton.addEventListener('click', e => {
+        theCanvas.style.background = randomColor();
+        thousandSquares(ctx, Math.floor(Math.random() * 200), colorList());
+        ctx.font = '40px serif';
+        ctx.strokeStyle = '#000000';
+        ctx.strokeText = ('Aesthetic', 100, 100);
+      });
+      var cleanerButton = document.getElementById('cleanerButton');
+      cleanerButton.addEventListener('click', e => {
+        ctx.clearRect(0, 0, 900, 600);
+        theCanvas.style.background = 'white';
+      });
+      var exportButton = document.getElementById('exportButton');
+      exportButton.addEventListener('click', e => {
+        console.log('Helllo World!');
+      });
+    </script>
+    <script src="/__/firebase/init.js"></script>
+  </body>
+</html>
