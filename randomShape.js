@@ -1,3 +1,4 @@
+import { randomLine } from "./randomline.js";
 //Randomizes the shape the program draws on the canvas
 export function randomShape(xdiff, ydiff, width, height, canvas, shape) {
   //Control for whether the user wants to use random shapes or control the shape that they are using, for instance maybe a pattern could go somewhere?
@@ -16,16 +17,7 @@ export function randomShape(xdiff, ydiff, width, height, canvas, shape) {
       break;
     case 3:
       //Line
-      canvas.lineWidth = 15;
-      canvas.beginPath();
-      canvas.moveTo(xdiff, ydiff);
-      canvas.quadraticCurveTo(
-        height,
-        width * (width / height),
-        xdiff + width,
-        ydiff + height
-      );
-      canvas.stroke();
+      randomLine(canvas, xdiff, ydiff, width, height);
       break;
     default:
       // eslint-disable-next-line no-console
