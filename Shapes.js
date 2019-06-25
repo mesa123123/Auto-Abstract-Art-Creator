@@ -1,31 +1,27 @@
 //Randomizes the shape the program draws on the canvas
-export function randomShape(xdiff, ydiff, width, height, canvas, shape) {
-  //Control for whether the user wants to use random shapes or control the shape that they are using, for instance maybe a pattern could go somewhere?
-  shape = shape === undefined ? Math.floor(Math.random() * 3) + 1 : shape;
-  switch (shape) {
-    case 1:
-      //Rectangle
-      canvas.fillRect(xdiff, ydiff, width, height);
-      break;
-    case 2:
-      //Circle
-      var circle = new Path2D();
-      circle.moveTo(xdiff, ydiff);
-      circle.arc(xdiff, ydiff, width * 0.6, 0, 2 * Math.PI);
-      canvas.fill(circle);
-      break;
-    case 3:
-      //Line
-      randomLine(canvas, xdiff, ydiff, width, height);
-      break;
-    default:
-      // eslint-disable-next-line no-console
-      console.log("Error: yeeeeaaahh didn't draw for some reason " + shape);
-      break;
+function randomShape() {
+  var decide = () => {
+    var output = Math.floor(Math.random() * 3) + 1
+    if (output === 1) {
+      return 'rectangle'
+    }
+    else if (output === 2) {
+      return 'circle'
+    } else {
+      return 'line'
+    }
   }
+  var shape = {
+    xloc: Math.random() * 100,
+    yloc: Math.random() * 100,
+    width: Math.random() * 20,
+    height: Math.random() * 20,
+    shape: decide()
+  }
+  return shape;
 }
 
-export function randomLine(canvas, xdiff, ydiff, height, width) {
+function randomLine(canvas, xdiff, ydiff, height, width) {
   canvas.lineWidth = 15;
   canvas.beginPath();
   canvas.moveTo(xdiff, ydiff);
@@ -36,4 +32,9 @@ export function randomLine(canvas, xdiff, ydiff, height, width) {
     ydiff + height
   );
   canvas.stroke();
+}
+
+module.exports = {
+  randomShape: randomShape,
+  randomLine: randomLine
 }

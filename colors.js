@@ -1,5 +1,5 @@
 
-export function colorList() {
+function colorList() {
   var outputList = [];
   for (let i = 0; i < 4; i++) {
     outputList.push(randomColor());
@@ -7,7 +7,11 @@ export function colorList() {
   return outputList;
 }
 
-export function randomColor() {
+function randomColor() {
   return ("#" + (Math.floor(Math.random()*256)).toString(16) + (Math.floor(Math.random()*256)).toString(16) + (Math.floor(Math.random()*256)).toString(16)).toUpperCase()
 }
 
+module.exports = {
+  colorList: colorList,
+  randomColor: randomColor
+}
