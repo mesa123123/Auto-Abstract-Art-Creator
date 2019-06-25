@@ -1,0 +1,22 @@
+{
+  "name": "@bowmanpete123/autoabstract",
+  "version": "1.0.0",
+  "description": "a package that draws random shapes on a canvas automatically",
+  "main": "drawArt.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github"
+  },
+  "keywords": [
+    "art",
+    "canvas",
+    "draw",
+    "abstract"
+  ],
+  "author": "Peter Bowman",
+  "license": "ISC",
+  "dependencies": {}
+}
