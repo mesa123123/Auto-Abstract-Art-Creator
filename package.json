@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "a package that draws random shapes on a canvas automatically",
   "main": "index.js",
+  "files": [
+    "./colors.js",
+    "./shapes.js",
+    "./drawArt.js"
+  ],
   "scripts": {
     "test": "test",
     "manual": "npm run ./test/manual test files/index.html"
