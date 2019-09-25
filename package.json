@@ -1,0 +1,25 @@
+{
+  "name": "auto-abstract-art-creator",
+  "version": "1.0.0",
+  "description": "A package that allows you to create abstract art automatically on a website",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mesa123123/Auto-Abstract-Art-Creator.git"
+  },
+  "keywords": [
+    "art"
+  ],
+  "author": "Peter Bowman",
+  "license": "CDDL",
+  "bugs": {
+    "url": "https://github.com/mesa123123/Auto-Abstract-Art-Creator/issues"
+  },
+  "homepage": "https://github.com/mesa123123/Auto-Abstract-Art-Creator#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}

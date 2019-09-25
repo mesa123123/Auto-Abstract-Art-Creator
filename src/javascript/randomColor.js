@@ -1,5 +1,5 @@
 //This chooses a random color
-export function randomColor() {
+export function createRandomColor() {
   //random 0-255 red value
   var red = Math.floor(Math.random() * 256);
   //ditto for green

@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import { randomColor } from "./randomColor.js";
+import { createRandomColor } from "./randomColor.js";
 import { randomShape } from "./randomShape.js";
 
-export function thousandSquares(
+export function drawArt(
   canvas,
   iters,
   colorListUse = undefined,
@@ -12,7 +12,7 @@ export function thousandSquares(
   if (iters > 0) {
     //get a random color
     var hex = !colorListUse
-      ? randomColor()
+      ? createRandomColor()
       : colorListUse[iters % colorListUse.length];
     //pick a random starting point for the shape horizontally
     var x = Math.random() * 900;
@@ -28,6 +28,6 @@ export function thousandSquares(
     //draw the shape on the canvas
     randomShape(x, y, w, h, canvas, shape);
     //call the function for the next shape
-    thousandSquares(canvas, (iters -= 1), colorListUse);
+    drawArt(canvas, (iters -= 1), colorListUse);
   }
 }

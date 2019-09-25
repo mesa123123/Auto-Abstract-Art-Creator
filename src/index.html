@@ -23,15 +23,15 @@
       type="module"
     ></script> -->
     <script type="module">
-      import { thousandSquares } from './drawArt.js';
-      import { colorList } from './colorList.js';
-      import { randomColor } from './randomColor.js';
+      import { drawArt } from './javascript/drawArt.js';
+      import { createColorList } from './javascript/colorList.js';
+      import { createRandomColor } from './javascript/randomColor.js';
       var theCanvas = document.querySelector('canvas'),
         ctx = theCanvas.getContext('2d');
       var theButton = document.getElementById('drawButton');
       theButton.addEventListener('click', e => {
-        theCanvas.style.background = randomColor();
-        thousandSquares(ctx, Math.floor(Math.random() * 200), colorList());
+        theCanvas.style.background = createRandomColor();
+        drawArt(ctx, Math.floor(Math.random() * 200), createColorList());
         ctx.font = '40px serif';
         ctx.strokeStyle = '#000000';
         ctx.strokeText = ('Aesthetic', 100, 100);
